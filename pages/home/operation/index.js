@@ -25,7 +25,7 @@ Page({
     const { submit_left_time, id } = e.currentTarget.dataset.item
     wx.navigateTo({ url: `/pages/home/submit/index?id=${id}&time=${submit_left_time}` })
   },
-  onLoad() {
+  onShow() {
     this.init()
     this.handleGetReceiveStatus()
   },
