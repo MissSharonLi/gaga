@@ -1,0 +1,46 @@
+<view class="user-content-wrap">
+  <view class="user-avator-content" data-type="login" bind:tap="onClickCell">
+    <t-image
+      class="avator"
+      src="/images/mine.png"
+      mode="aspectFill"
+
+    />
+    <view class="unlogin" wx:if="{{!isLogin}}">立即登录 ></view>
+    <view class="login" wx:if="{{isLogin}}">
+      <view class="nickname" wx:if="{{userInfo.nickname}}">{{userInfo.nickname}}</view>
+      <view class="tel" wx:if="{{userInfo.mobile}}">{{userInfo.mobile}}</view>
+    </view>
+  </view>
+  <view class="user-douyin-content">
+    <view class="left">
+      <t-image
+        src="/images/dy_logo.png"
+        mode="aspectFill"
+
+      />
+      <view class="title">账号管理</view>
+    </view>
+    <view class="limit" data-type="account" bind:tap="onClickCell">去授权</view>
+  </view>
+  <view class="user-exit-content" wx:if="{{isLogin}}">
+    <t-cell
+      t-class="ceshi"
+      title="退出登录"
+      image="/images/exit.png"
+      arrow
+      bordered="{{false}}"
+      data-key="showConfirm"
+      bind:tap="showDialog"
+    />
+  </view>
+  <t-dialog
+    visible="{{showConfirm}}"
+    title="退出登录"
+    content=""
+    confirm-btn="{{ confirmBtn }}"
+    cancel-btn="取消"
+    bind:confirm="handleExitLogin"
+    bind:cancel="closeDialog"
+  />
+</view>

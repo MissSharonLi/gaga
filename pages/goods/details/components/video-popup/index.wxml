@@ -1,0 +1,19 @@
+<t-popup visible="{{show}}" placement="center" bind:visible-change="closeVideoPopup">
+  <view class="block">
+    <video
+      wx:if="{{show}}"
+      loop
+      style="height: 100%;width:100%;margin:0 auto;display:block"
+      controls="{{true}}"
+      autoplay="{{true}}"
+      show-play-btn="{{true}}"
+      show-center-play-btn="{{false}}"
+      objectFit="contain"
+      muted="{{false}}"
+      show-mute-btn='{{false}}'
+      show-bottom-progress='{{false}}'
+      vslide-gesture-in-fullscreen='{{true}}'
+      src="{{src}}">
+    </video>
+  </view>
+</t-popup>

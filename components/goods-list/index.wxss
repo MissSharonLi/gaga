@@ -1,0 +1,4 @@
+.goods-list-wrap {
+  padding: 0;
+  background: #fff;
+}

@@ -1,0 +1,150 @@
+.block {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-color: transparent;
+}
+.t-popup-content {
+  background-color: transparent !important;
+}
+.step-1 {
+  margin-top: 900rpx;
+}
+.step__text__content {
+  width: 200rpx;
+  background-color: rgb(228, 228, 247);
+  color: rgb(109, 127, 250);
+  padding: 20rpx;
+  border-radius: 10rpx;
+  font-size: 28rpx;
+  line-height: 1.8;
+  margin-left: 200rpx;
+  position: relative;
+}
+.step-1 .step__text__content {
+  margin-bottom: 50rpx;
+}
+.step-1 .step__text__content::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-bottom: 20rpx solid rgb(228, 228, 247);
+  border-left: 20rpx solid transparent;
+  left: 50rpx;
+  top: -10rpx;
+}
+.step-2 .step__text__content {
+  width: 300rpx;
+  margin-left: 80rpx;
+}
+.step-2 .step__text__content::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-top: 20rpx solid rgb(228, 228, 247);
+  border-left: 20rpx solid transparent;
+  left: 50rpx;
+  bottom: -10rpx;
+}
+.step__button {
+  border-radius: 8rpx;
+  width: 150rpx;
+  margin: 0 auto;
+  background-color: rgb(92, 111, 251);
+  color: #fff;
+  font-size: 26rpx;
+  text-align: center;
+  height: 40rpx;
+  padding: 20rpx;
+}
+.step-2 {
+  margin-top: 42%;
+}
+.step__2__content {
+  display: flex;
+  align-items: center;
+}
+.step-2 .img {
+  width: 90%;
+  height: 260rpx;
+  display: block;
+  margin: 20rpx auto 0;
+  border-radius: 8rpx;
+}
+.step-3 {
+  margin-top: 790rpx;
+  overflow: hidden;
+}
+.step-3 .select__content {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 26%;
+  position: fixed;
+  top: 47%;
+}
+.step-3 .step__text__content {
+  float: right;
+  margin-right: 22rpx;
+}
+.step-3 .select__content .img {
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+  display: block;
+}
+.step__3__bottom {
+  position: fixed;
+  width: 100%;
+  bottom: 50rpx;
+}
+.step-3 .step__text__content {
+  width: 250rpx;
+  margin-bottom: 30rpx;
+  position: relative;
+}
+.step__button__content {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.step-3 .step__text__content::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-top: 20rpx solid rgb(228, 228, 247);
+  border-left: 20rpx solid transparent;
+  right: 50rpx;
+  bottom: -10rpx;
+  transform: rotate(-90deg);
+}
+.step__button__content .step__button.special {
+  font-size: 24rpx;
+  border-radius: 8rpx;
+  min-width: 220rpx;
+  margin: 0 auto;
+  background-color: rgb(92, 111, 251);
+  color: #fff;
+  font-size: 26rpx;
+  text-align: center;
+  display: inline-block;
+  height: 70rpx;
+  padding: 10rpx 10rpx 0;
+  margin: 0;
+  margin-right: 22rpx;
+  margin-left: 30rpx;
+}
+.step__button__content .step__button {
+  margin: 0;
+}
+.step__button__content .tips {
+  font-size: 20rpx;
+}

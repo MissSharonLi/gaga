@@ -1,0 +1,7 @@
+{
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "t-image": "tdesign-miniprogram/image/image",
+    "custom-nav-bar": "../../../components/custom-nav-bar/index"
+  }
+}

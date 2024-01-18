@@ -1,0 +1,84 @@
+<custom-nav-bar title="提交作业" custom-class="custom-nav-bar-content" />
+<view class="submit__operation__content">
+  <view class="tips">
+    <view>1.视频发布至抖音后，请根据发布结果，按要求提交作业！</view>
+    <view>2.请勿提交虚假作业，否则将被取消领视频资格</view>
+  </view>
+  <view class="operation__items__wrapper">
+    <view class="section">
+      <view class="title">发布结果（必填）</view>
+      <view class="operation__items__content">
+        <view
+          class="items {{index === resultTab ? 'active' : ''}}"
+          wx:for="{{releaseResults}}"
+          wx:key="index"
+          data-item="{{item}}"
+          data-index="{{index}}"
+          bind:tap="handleTab"
+          >
+          {{item.label}}
+        </view>
+      </view>
+    </view>
+    <view class="section">
+      <view class="title">
+        <view>视频链接（必填）</view>
+        <view class="tip__text">如何获取视频链接></view>
+      </view>
+      <t-textarea
+        t-class="textarea__external__class"
+        placeholder="请粘贴抖音视频链接，必须是平台提供的是视频哦"
+        disableDefaultPadding="{{true}}"
+        data-type="{{0}}"
+        bind:change="handleChange"
+        placeholderStyle="font-size:24rpx;padding:30rpx"
+        />
+    </view>
+    <view class="section">
+      <view class="title">
+        <view>截图</view>
+        <view class="text"> 抖+投放失败或视频已被限流，可上传截图</view>
+      </view>
+      <t-upload
+        t-class="upload__content"
+        mediaType="{{['video','image']}}"
+        max="{{5}}"
+        files="{{fileList}}"
+        bind:add="handleAdd"
+        bind:remove="handleRemove"
+      ></t-upload>
+    </view>
+    <view class="section">
+      <view class="title">
+        <view>视频评价（必填）</view>
+        <view class="text"> 支持多选</view>
+      </view>
+      <view class="checkbox__content">
+        <view
+          class="checkbox__item {{item.selected ? 'selected' : ''}}"
+          wx:for="{{evaluateType}}"
+          wx:key="index"
+          bind:tap="handleSelected"
+          data-item="{{item}}"
+          data-index="{{index}}"
+          >{{item.text}}</view>
+      </view>
+    </view>
+    <view class="section">
+      <view class="title">反馈意见</view>
+        <t-textarea
+          t-class="textarea__external__class"
+          value="{{feedback}}"
+          placeholder="请对本次提供的原创视频进行评价，嘎嘎平台会根据您的反馈进行优化，期待与您共同进步！"
+          disableDefaultPadding="{{true}}"
+          bind:change="handleChange"
+            data-type="{{1}}"
+          placeholderStyle="font-size:24rpx;padding:30rpx"
+          />
+      </view>
+      <t-button t-class="submit__work__button" wx:if="{{time>0}}" bind:tap="handleSubmit">
+        <view class="text">立即提交 ></view>
+        <view class="time">剩余时间：<t-count-down t-class="countdown" size="small" time="{{ time }}" /></view>
+      </t-button>
+  </view>
+</view>

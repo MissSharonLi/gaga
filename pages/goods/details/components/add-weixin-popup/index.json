@@ -1,0 +1,9 @@
+{
+  "component": true,
+  "usingComponents": {
+    "t-image": "tdesign-miniprogram/image/image",
+    "t-popup": "tdesign-miniprogram/popup/popup",
+    "t-button": "tdesign-miniprogram/button/button",
+    "qr-container": "../../../../../components/wx-qr/index"
+  }
+}

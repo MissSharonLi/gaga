@@ -1,0 +1,27 @@
+<custom-nav-bar  />
+<view class="login-input-warp">
+  <view class="title">验证码登录</view>
+  <t-input
+    bind:change="mobileChange"
+    bind:clear="mobileChange"
+    type="number"
+    clearable
+    value="{{mobile}}"
+    label="+86"
+    placeholder="请输入手机号" />
+  <t-input
+    placeholder="验证码"
+    type="number"
+    clearable
+    bind:clear="captchaChange"
+    value="{{captcha}}"
+    bind:change="captchaChange"
+  >
+    <view slot="suffix" style="display: flex; align-items: center">
+      <view class="suffix--line" wx:if="{{countdown < 60}}">{{countText}}</view>
+      <view class="verify" wx:else aria-role="button" bind:tap="handleSmsSend"> {{countText}} </view>
+    </view>
+  </t-input>
+  <t-button theme="primary" size="large" bind:tap="handleSubmit" block>登录</t-button>
+  <view class="tips" bind:tap="handleOperation">账号密码登录</view>
+</view>

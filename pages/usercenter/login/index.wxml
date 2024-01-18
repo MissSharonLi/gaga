@@ -1,0 +1,58 @@
+<view class="login-wrap">
+  <custom-nav-bar type="{{2}}" />
+  <view class="login-content">
+    <t-image
+      class="logo"
+      src="/images/logo.png"
+      mode="aspectFill"
+
+    />
+    <view>
+      <view class="tips-title">请选择登录方式，平台将为您提供以下服务：</view>
+      <view class="tips-text">· 免费领取样品</view>
+      <view class="tips-text">· 高佣商品免费上橱窗</view>
+    </view>
+    <view class="login-btn" data-type="{{0}}" bind:tap="handleToLogin">登录/注册</view>
+    <t-radio value="radio1" checked="{{isAgree}}" bind:change="handleChange">
+      <view slot="content" class="t-tips-content">我已阅读并同意<view class="t-inline">《用户协议》</view>和 <view class="t-inline">隐私政策</view>，运营商将对你提供的微信或手机号进行验证</view>
+    </t-radio>
+  </view>
+  <view  class="login-footer">
+    <view class="footer-content">
+      <view class="footer-item" data-type="{{1}}" bind:tap="handleToLogin">
+        <t-image
+          class="img"
+          src="/images/user.png"
+          mode="aspectFill"
+
+        />
+        账号登录
+      </view>
+      <view class="footer-item" data-type="{{2}}" bind:tap="handleToLogin">
+        <t-image
+          class="img"
+          src="/images/tel.png"
+          mode="aspectFill"
+
+        />
+        验证码登录
+      </view>
+    </view>
+  </view>
+  <t-dialog
+    visible="{{showDialog}}"
+    title="用户协议与隐私保护"
+    confirm-btn="{{ confirmBtn }}"
+    cancel-btn="不同意"
+    data-key="showDialog"
+    button-layout="vertical"
+    bind:confirm="doLogin"
+    bind:cancel="closeDialog"
+  >
+     <view slot="content" class="t-tips-content">
+      我已阅读并同意<view class="t-inline">《用户协议》</view>和 <view class="t-inline">隐私政策</view>，运营商将对你提供的微信或手机号进行验证
+      <view class="point">本平台将严格保护你的个人信息安全</view>
+    </view>
+  </t-dialog>
+  <get-phone-popup show="{{isGetPopupShow}}" bind:closePhonePopup="handlePopupHide" bind:getPhoneNumber="getPhoneNumber" />
+</view>

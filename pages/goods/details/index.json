@@ -1,0 +1,24 @@
+{
+  "navigationBarTitleText": "领取视频",
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "t-image": "/components/webp-image/index",
+    "t-tag": "tdesign-miniprogram/tag/tag",
+    "t-toast": "tdesign-miniprogram/toast/toast",
+    "t-swiper": "tdesign-miniprogram/swiper/swiper",
+    "t-swiper-nav": "tdesign-miniprogram/swiper-nav/swiper-nav",
+    "t-button": "tdesign-miniprogram/button/button",
+    "t-icon": "tdesign-miniprogram/icon/icon",
+    "t-popup": "tdesign-miniprogram/popup/popup",
+    "custom-nav-bar": "../../../components/custom-nav-bar/index",
+    "t-tabs": "tdesign-miniprogram/tabs/tabs",
+    "t-tab-panel": "tdesign-miniprogram/tab-panel/tab-panel",
+    "t-notice-bar": "tdesign-miniprogram/notice-bar/notice-bar",
+    "get-popup": "./components/get-popup/index",
+    "add-window-popup": "./components/add-window-popup/index",
+    "video-popup": "./components/video-popup/index",
+    "t-image-viewer": "tdesign-miniprogram/image-viewer/image-viewer",
+    "new-guild-popup": "./components/new-guild-popup",
+    "add-weixin-popup": "./components/add-weixin-popup"
+  }
+}

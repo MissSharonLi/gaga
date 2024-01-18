@@ -1,0 +1,10 @@
+<t-dialog
+  visible="{{showDialog}}"
+  title="{{title}}"
+  content="{{content}}"
+  confirm-btn="{{ confirmBtn }}"
+  cancel-btn="取消"
+  button-layout="vertical"
+  bind:confirm="closeDialog"
+  bind:cancel="closeDialog"
+/>

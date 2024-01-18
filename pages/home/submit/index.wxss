@@ -1,0 +1,118 @@
+.submit__operation__content {
+  padding: 30rpx;
+  padding-bottom: 180rpx;
+}
+.submit__operation__content .tips {
+  color: #ef8147 !important;
+  background-color: #fdf6e9 !important;
+  padding: 20rpx 25rpx !important;
+  margin: 0 0 12rpx;
+  font-size: 22rpx;
+  font-weight: normal;
+  margin-bottom: 40rpx;
+}
+.operation__items__wrapper .title {
+  font-size: 32rpx;
+  font-weight: 700;
+  margin-bottom: 20rpx;
+}
+.operation__items__wrapper .section {
+  margin-bottom: 50rpx;
+}
+.operation__items__content {
+  display: flex;
+  align-items: center;
+}
+.operation__items__content .items {
+  padding: 10rpx 20rpx;
+  border: 2rpx solid #fff;
+  color: #333;
+  background-color: #fff;
+  text-align: center;
+  font-size: 26rpx;
+  margin-right: 20rpx;
+  border-radius: 8rpx;
+}
+.operation__items__content .items.active {
+  border: 2rpx solid #5a72fa;
+  color: #5a72fa;
+  background-color: rgb(235, 230, 248);
+}
+.operation__items__wrapper .section .title {
+  display: flex;
+  align-items: flex-end;
+}
+.operation__items__wrapper .section .text {
+  font-size: 22rpx;
+  color: #999;
+  font-weight: normal;
+}
+.operation__items__wrapper .section .tip__text {
+  font-size: 22rpx;
+  color: #999;
+  position: absolute;
+  right: 30rpx;
+  font-weight: normal;
+}
+.textarea__external__class {
+  border-radius: 8rpx !important;
+  padding: 15rpx !important;
+  font-size: 24rpx !important;
+}
+.checkbox__content {
+  background-color: #fff;
+  padding: 20rpx;
+  display: flex;
+  align-items: center;
+  flex-flow: wrap;
+}
+.checkbox__item {
+  background: #f2f2f2;
+  color: #999;
+  text-align: center;
+  padding: 10rpx 20rpx;
+  margin-right: 20rpx;
+  margin-bottom: 20rpx;
+  border-radius: 8rpx;
+  font-size: 24rpx;
+  border: 2rpx solid #f2f2f2;
+}
+.checkbox__item.selected {
+  border: 2rpx solid #5a72fa;
+  color: #5a72fa;
+  background-color: rgb(235, 230, 248);
+}
+.submit__work__button {
+  width: calc(100% - 60rpx);
+  position: fixed !important;
+  bottom: 50rpx;
+  left: 30rpx;
+  display: flex;
+  flex-direction: column;
+  height: auto !important;
+  border-radius: 150rpx !important;
+  z-index: 999;
+}
+.submit__work__button .time {
+  display: flex;
+  align-items: center;
+  font-size: 22rpx;
+  margin-bottom: -10rpx;
+}
+.submit__work__button .text {
+  margin-bottom: -45rpx;
+  font-size: 30rpx;
+}
+.submit__work__button .time .countdown {
+  font-size: 22rpx !important;
+  color: #fff !important;
+}
+.upload__content {
+  background-color: #f2f2f2;
+}
+.upload__content .t-grid {
+  background-color: #f2f2f2 !important;
+}
+.upload__content .t-grid-item__content {
+  border: 2rpx dashed #bbb;
+}

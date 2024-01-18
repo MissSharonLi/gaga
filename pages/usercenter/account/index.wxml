@@ -1,0 +1,49 @@
+<custom-nav-bar title="账号管理" custom-class="custom-nav-bar-content" />
+<view class="account-content-wrap">
+  <view class="tips">授权有效期30天，有问题请联系选品官【嘎嘎种草】</view>
+  <view class="account-empty-content" wx:if="{{douyinList.length===0}}">
+    <t-empty t-class="empty-cls" t-class-image="t-empty__image" image="/images/empty.png" description="还没有账号哦～" />
+  </view>
+  <block wx:if="{{douyinList.length > 0}}">
+    <view class="account-info-content" wx:for="{{douyinList}}" wx:key="index">
+      <view class="info">
+        <t-image
+          class="avator"
+          src="{{item.avatar}}"
+          mode="aspectFill"
+
+        />
+        <view class="login">
+          <view class="nickname">{{item.nickname}}</view>
+          <view class="time">剩余24天</view>
+        </view>
+      </view>
+      <view class="account-info-data">
+        <view class="text-content">
+          <view class="text">暂无</view>
+          <view class="text">粉丝</view>
+        </view>
+        <view class="text-content">
+          <view class="text">0</view>
+          <view class="text">30天橱销单数</view>
+        </view>
+        <view class="text-content">
+          <view class="text">0</view>
+          <view class="text">30天橱销GMV</view>
+        </view>
+      </view>
+      <view class="refresh" bind:tap="handleShowPopup">刷新授权</view>
+    </view>
+  </block>
+  <douyin-scan show="{{isScanPopupShow}}" bind:success="init"  bind:closeScanPopup="handlePopupHide" />
+  <view class="account-add-content">
+    <t-image
+      class="douyin"
+      src="/images/dy_round.png"
+      mode="aspectFill"
+
+    />
+    <view class="text" bind:tap="handleShowPopup">添加抖音账号</view>
+  </view>
+  <load-more list-is-empty="{{!douyinList.length}}" status="{{loadStatus}}" bind:retry="onReTry" />
+</view>

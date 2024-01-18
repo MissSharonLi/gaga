@@ -1,0 +1,15 @@
+<t-popup visible="{{show}}" t-class="scan__popup__content" placement="center" bind:visible-change="closeAddWeixinPopup">
+  <view class="block">
+   <t-image
+      class="douyin"
+      src="/images/scan_bg.jpg"
+      mode="aspectFill"
+
+    />
+    <view class="main__title">长按二维码，添加您的专属选品官</view>
+    <qr-container class="qr__container" size="340" text="{{qrcode}}"></qr-container>
+    <view class="sub__title">专属选品官将为您提供以下服务</view>
+    <view class="tips">达人带货培训、高佣商品安排寄样</view>
+    <view  class="refrsh__button"  bind:tap="closeAddWeixinPopup" block>我已添加</view>
+  </view>
+</t-popup>

@@ -1,0 +1,13 @@
+{
+  "navigationBarTitleText": "视频作业",
+  "navigationBarBackgroundColor": "#f5f5f5",
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "t-empty": "tdesign-miniprogram/empty/empty",
+    "custom-nav-bar": "/components/custom-nav-bar/index",
+    "load-more": "/components/load-more/index",
+    "t-count-down": "tdesign-miniprogram/count-down/count-down"
+  },
+  "enablePullDownRefresh": true,
+  "backgroundTextStyle": "dark"
+}

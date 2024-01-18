@@ -1,0 +1,341 @@
+<custom-nav-bar title="领取视频" custom-class="custom-nav-bar-content" />
+<view class="goods-detail-page">
+  <view class="goods-head">
+    <view class="swiper-custom-content">
+      <swiper
+        autoplay="{{autoplay}}"
+        vertical="{{true}}"
+        circular="{{true}}"
+        interval="{{2000}}"
+        display-multiple-items="1"
+        class="swiper-custom__content--vertical"
+        >
+        <block wx:for="{{noticeContent}}" wx:for-item="item" wx:key="index">
+          <swiper-item>
+            <view> <t-image class="notice-avator-img" src="{{item.avatar}}" shape="circle" />{{item.tips}} </view>
+          </swiper-item>
+        </block>
+      </swiper>
+      <view class="swiper-custom-number" wx:if="{{current>0}}">
+        <view class="custom-number-item">{{current}}/</view>
+        <view class="custom-number-item">{{returnObj.image_arr.length }}</view>
+      </view>
+      <view class="swiper-custom-indot">
+        <view class="custom-indot-item {{current === 0 ? 'active' : ''}}" data-num="{{0}}" bind:tap="handleShift">范本视频</view>
+        <view class="custom-indot-item {{current !== 0 ? 'active' : ''}}" data-num="{{1}}" bind:tap="handleShift">商品图</view>
+      </view>
+      <swiper style="width:100%;height:750rpx;"
+        circular="{{true}}"
+        current="{{current}}"
+        duration="{{duration}}"
+        bind:change="bindchange">
+          <swiper-item>
+              <block>
+                <video
+                  id="myVideo"
+                  loop
+                  style="height: 100%;width:100%;margin:0 auto;display:block"
+                  autoplay="{{autoplay}}"
+                  class="swiper-item"
+                  show-play-btn="{{true}}"
+                  controls="{{false}}"
+                  objectFit="contain"
+                  muted="{{muted}}"
+                  show-mute-btn='{{false}}'
+                  show-bottom-progress='{{false}}'
+                  vslide-gesture-in-fullscreen='{{true}}'
+                  src="{{returnObj.example_video}}">
+                </video>
+              </block>
+              <view class="swiper-custom-controls">
+                <view class="custom-control-content">
+                  <image src="/images/play.png" wx:if="{{play}}" bind:tap="handlePlay" class="custom-controls-item" />
+                  <image src="/images/pause.png" wx:if="{{!play}}" bind:tap="handlePlay" class="custom-controls-item" />
+                </view>
+                <view class="custom-control-content">
+                  <image src="/images/muted.png" wx:if="{{!muted}}" bind:tap="handleMuted" class="custom-controls-item" />
+                  <image src="/images/mute.png" wx:if="{{muted}}" bind:tap="handleMuted" class="custom-controls-item" />
+                  <image src="/images/zoom.png" class="zoom" data-type="{{0}}" data-url="{{returnObj.example_video}}"  bind:tap="handleToScreen" />
+                </view>
+              </view>
+          </swiper-item>
+          <!--商品图片-->
+          <swiper-item wx:for="{{returnObj.image_arr}}" wx:key="*this" class="{{cardCur==index?'cur':''}}">
+            <view class="swiper-custom-item">
+              <image src="{{item}}" style="width:100%;height:100%" mode="widthFix" bindtap='goodsImgTap' data-item='{{item}}'></image>
+            </view>
+          </swiper-item>
+      </swiper>
+    </view>
+    <view class="goods__info__content" id="moveThis">
+      <view class="info__detail__content">
+        <view class="info__detail__left">
+          <view class="left__title">
+            <view class="one">寻鱼专属高佣</view>
+            <view class="two">到手价</view>
+          </view>
+          <view class="left__content">
+            <view class="one">
+              <view class="small">
+                <view class="point">{{returnObj.public_commission}}</view>%
+              </view>
+              <view class="mini">公开{{returnObj.commission}}%</view>
+            </view>
+            <view class="two">
+              ¥ <view class="price">{{returnObj.price}}</view>
+            </view>
+          </view>
+        </view>
+        <view class="add__to__window" data-type="{{2}}" bind:tap="handleShowPopup">添加至橱窗</view>
+      </view>
+      <view class="product__info__content">
+        <view class="product__detail__content">
+          <t-image class="img" src="{{returnObj.image}}" />
+          <view class="info__right">
+            <view class="title">
+              <t-image class="douyin" src="/images/douyin.png" />
+              <view class="ellipsis">{{returnObj.name}}</view>
+            </view>
+            <view class="tips__content">
+              <view>{{returnObj.store_name}}</view>
+              <view class="number__content"><view class="number">总销量</view> {{returnObj.sale_num_text}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="spu-select" data-type="{{1}}" bindtap="handleShowPopup">
+        <view class="label">领取要求</view>
+        <view class="content">
+          <view>无门槛</view>
+          <t-icon name="chevron-right" size="36rpx" color="#999" />
+        </view>
+      </view>
+      <view class="goods__show__content">
+        <view class="goods__tabs__content">
+          <t-tabs
+            t-class="t-tabs"
+            t-class-active="tabs-external__active"
+            t-class-item="tabs-external__item"
+            defaultValue="{{0}}"
+            space-evenly="{{false}}"
+            theme="tag"
+            value="{{tabValue}}"
+            bind:change="handleChange"
+          >
+            <t-tab-panel
+              wx:for="{{tabList}}"
+              wx:for-index="index"
+              wx:key="index"
+              label="{{item.title}}"
+              value="{{index}}"
+            />
+          </t-tabs>
+        </view>
+        <view>
+          <view hidden="{{tabValue !== 0}}">
+            <view class="steps__draw__content">
+              <view class="step">
+                <view class="number">1</view>
+                <view class="text">下载视频<view>添加商品到橱窗</view></view>
+              </view>
+              <view class="step">
+                <view class="number">2</view>
+                <view class="text">发布视频</view>
+              </view>
+              <view class="step">
+                <view class="number">3</view>
+                <view class="text">在嘎嘎小程序<view>提交作业</view></view>
+              </view>
+            </view>
+            <view class="steps__tips__content">
+              <view>1.领到视频后，必须将嘎嘎平台提供的同款商品添加至橱窗，并且发布视频到抖音</view>
+              <view>2.在抖音发布视频后，提交至嘎嘎平台，完成作业；未完成作业的达人，平台将不再提供视频</view>
+              <view>3.本视频由嘎嘎平台原创，并无偿提供给到您，无版权纠纷问题，请放心下载使用</view>
+              <view>4.拍摄制作不易，期待您好好利用</view>
+            </view>
+          </view>
+          <view hidden="{{tabValue !== 1}}" class="classic__tabs__content">
+            <t-tabs
+              t-class="t-tabs"
+              t-class-active="tabs-external__active"
+              t-class-item="tabs-external__item"
+              defaultValue="{{0}}"
+              space-evenly="{{false}}"
+              theme="tag"
+              >
+              <t-tab-panel
+                wx:for="{{storyTabList}}"
+                wx:for-index="index"
+                wx:key="name"
+                wx:for-item="item"
+                label="{{item.name}}"
+                value="{{index}}"
+              >
+               <view class="steps__video__content">
+                  <view class="steps__video__item"
+                    wx:for="{{item.children}}"
+                    wx:for-index="idx"
+                    wx:for-item="item1"
+                    wx:key="id"
+                    data-idx="{{idx}}"
+                    data-type="{{0}}"
+                    data-item="{{item1}}"
+                    data-index="{{index}}"
+                    catch:tap="handleSelected">
+                    <image class="images__selected" hidden="{{!item1.selected}}" src="/images/selected.png" />
+                    <image class="images__selected" hidden="{{item1.selected}}" src="/images/unselected.png" />
+                    <view class="video__play__content">
+                    <image src="/images/played.png" data-type="{{0}}" data-item="{{item1}}" catch:tap="handleShowPopup"  class="img" />
+                      <view>{{item1.video_duration}}</view>
+                    </view>
+                    <t-image src="{{item1.video_thumb_url}}" mode="aspectFill" width="100%" height="100%" />
+                  </view>
+                </view>
+              </t-tab-panel>
+            </t-tabs>
+          </view>
+          <view class="classic__tabs__content" hidden="{{tabValue !== 2}}">
+            <t-tabs
+              t-class="t-tabs"
+              t-class-active="tabs-external__active"
+              t-class-item="tabs-external__item"
+              defaultValue="{{0}}"
+              space-evenly="{{false}}"
+              theme="tag"
+              >
+              <t-tab-panel
+                wx:for="{{imagesList}}"
+                wx:for-index="index"
+                wx:key="index"
+                label="{{item.name}}"
+                value="{{index}}"
+              >
+               <view class="steps__video__content">
+                  <view class="steps__video__item"
+                    wx:for="{{item.children}}"
+                    wx:for-index="idx"
+                    wx:for-item="item1"
+                    wx:key="idx"
+                    catch:tap="handleSelected"
+                    data-item="{{item1}}"
+                    data-type="{{2}}"
+                    >
+                    <view
+                      catch:tap="handleSelected"
+                      data-type="{{1}}"
+                      data-item="{{item1}}"
+                      data-index="{{index}}"
+                      data-idx="{{idx}}"
+                      >
+                      <image class="images__selected" hidden="{{!item1.selected}}" src="/images/selected.png" />
+                      <image class="images__selected" hidden="{{item1.selected}}" src="/images/unselected.png" />
+                    </view>
+                    <view class="video__play__content">
+                      <view></view>
+                      <view>{{item1.file_size_text}}</view>
+                    </view>
+                    <t-image src="{{item1.thumb_url}}" mode="aspectFill" width="100%" height="100%" />
+                  </view>
+                </view>
+              </t-tab-panel>
+            </t-tabs>
+          </view>
+          <view hidden="{{tabValue !== 3}}">
+            <view
+              wx:for="{{videoTextList}}"
+              wx:for-item="item"
+              wx:for-index="index"
+              wx:key="index"
+              >
+              <view class="swiper__title__content">{{item.name}}</view>
+              <swiper
+                wx:if="{{index === 0}}"
+                class='swiperClass'
+                duration="1000"
+                previous-margin="80rpx"
+                next-margin="80rpx"
+                data-index="{{0}}"
+                bind:change="onChange"
+                display-multiple-items="1"
+                >
+                <block
+                  wx:for="{{item.children}}"
+                  wx:for-item="item1"
+                  wx:for-index="idx"
+                  wx:key="idx">
+                  <swiper-item class="swiper-item">
+                     <view class="slide-image {{swiperIndex === idx ? 'active' : 'quiet'}}">
+                      <view class="slide-image-content">{{item1.content}}</view>
+                      <view class="copy" data-data="{{item1.content}}" bind:tap="handleCopy"><t-icon name="file-copy" size="28rpx" />复制</view>
+                    </view>
+                  </swiper-item>
+                </block>
+              </swiper>
+              <swiper
+                wx:if="{{index === 1}}"
+                class='swiperClass'
+                duration="1000"
+                previous-margin="80rpx"
+                next-margin="80rpx"
+                data-index="{{1}}"
+                bind:change="onChange"
+                data-index="{{index}}"
+                display-multiple-items="1"
+                >
+                <block
+                  wx:for="{{item.children}}"
+                  wx:for-item="item1"
+                  wx:for-index="idx"
+                  wx:key="idx">
+                  <swiper-item class="swiper-item">
+                     <view class="slide-image {{swiperIndex1 === idx ? 'active' : 'quiet'}}">
+                      <view class="slide-image-content">{{item1.content}}</view>
+                      <view class="copy" data-data="{{item1.content}}" bind:tap="handleCopy"><t-icon name="file-copy" size="28rpx" />复制</view>
+                    </view>
+                  </swiper-item>
+                </block>
+              </swiper>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <add-window-popup show="{{isAddPopupShow}}" params="{{addWindowParams}}" data-type="{{2}}" bind:closeAddPopup="handlePopupHide" />
+  <get-popup show="{{isGetPopupShow}}" data-type="{{1}}" bind:closePromotionPopup="handlePopupHide" />
+  <video-popup show="{{isVideoPopupShow}}" src="{{videoSrc}}" data-type="{{0}}"  bind:closeVideoPopup="handlePopupHide" />
+  <new-guild-popup show="{{isGuildPopupShow}}" bind:doNext="doNext" data-type="{{3}}" bind:closeGuildPopup="handlePopupHide" />
+  <add-weixin-popup show="{{isAddWxPopupShow}}" data-type="{{4}}" bind:closeAddWeixinPopup="handlePopupHide" />
+
+  <t-image-viewer
+    showIndex="{{true}}"
+    visible="{{imgVisible}}"
+    images="{{curImgUrls}}"
+    initial-index="{{initialIndex}}"
+    bind:close="onClose"
+    bind:tap="onClose"
+    using-custom-navbar="{{false}}"
+  ></t-image-viewer>
+
+  <view class="goods__operation__content">
+    <view class="help" bind:tap="handleToScreen">
+      <t-image  src="/images/help.png" class="img" />
+      新手帮助
+    </view>
+    <view class="button guan" data-type="{{3}}" bind:tap="handleShowPopup">
+      <t-image src="/images/logo.png" />
+      专属选品官
+    </view>
+    <view class="button download__button" bind:tap="handleDownloadSave">
+      <view>下载分镜</view>
+      <view class="button__small" loading="{{true}}">已选取({{allSelectedNum}}/10)共{{allSelectedMb}}Mb</view>
+    </view>
+  </view>
+</view>
+<t-toast id="t-toast" t-class="custom-toast-content">
+  <view slot="message">
+    <view class="progress" hidden="{{loadingTheme === 'success'}}">视频下载中({{idx}}/{{allSelectedNum}})</view>
+    <view class="progress" hidden="{{loadingTheme === 'loading'}}">下载成功</view>
+    <view class="tips">{{loadingTheme === 'success' ? '请打开相册查收视频' : '请耐心等待'}}</view>
+  </view>
+</t-toast>

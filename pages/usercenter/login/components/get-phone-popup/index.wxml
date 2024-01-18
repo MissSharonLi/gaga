@@ -1,0 +1,20 @@
+<view class="get__popup__content">
+  <t-popup visible="{{show}}" placement="bottom" z-index="11502" overlay-props="{{overflayProps}}" bind:visible-change="closePhonePopup">
+    <view class="block">
+      <view class="header">
+        <t-image
+          class="logo"
+          src="/images/logo.png"
+          mode="aspectFill"
+
+          />
+      </view>
+      <view class="title">申请获取您的手机号，并为您提供以下服务</view>
+      <view class="popu__text__content">
+        <view class="text-tips">· 沟通免费寄样的商品规格、收货信息等</view>
+        <view class="text-tips">· 洽谈带货推广合作，协商高佣计划</view>
+      </view>
+      <t-button class="t-submit" open-type="getPhoneNumber" bind:getphonenumber="getPhoneNumber">手机号授权登录</t-button>
+    </view>
+  </t-popup>
+</view>

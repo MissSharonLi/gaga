@@ -1,0 +1,54 @@
+<t-popup visible="{{show}}" placement="bottom" bind:visible-change="closeAddPopup">
+  <view class="block add__window__popup">
+
+      <t-checkbox-group t-class="theme-card"  borderless bind:change="onChange">
+        <t-checkbox
+          t-class-content="all__label"
+          t-class-icon="theme-icon"
+          placement="right"
+          content-disabled="{{true}}"
+          check-all="{{true}}">
+          <view slot="content" class="title">
+            选择抖音号({{selectedList.length}}/{{douyinList.length}})
+            <view class="select__all">全选</view>
+          </view>
+        </t-checkbox>
+         <view class="add__scroll__content">
+        <t-checkbox
+          wx:for="{{douyinList}}"
+          wx:key="index"
+          value="{{item.nickname}}"
+          t-class-icon="{{item.disabled ? 'theme-icon icon-disabled' : 'theme-icon'}}"
+          content-disabled="{{item.disabled}}"
+          disabled="{{item.disabled}}"
+          placement="right">
+          <view class="custom__content" slot="content">
+            <view class="custom__info">
+              <image
+                class="avator"
+                src="{{item.avatar}}"
+                shape="circle"
+
+              />
+              <view class="info__content">
+                <view>{{item.nickname}}<t-tag class="margin-16" variant="light" theme="primary">默认账号</t-tag></view>
+                <view class="num">粉丝：暂无</view>
+              </view>
+            </view>
+            <view wx:if="{{item.disabled}}" class="already__no__authority">授权已失效></view>
+          </view>
+        </t-checkbox>
+         </view>
+      </t-checkbox-group>
+    <view class="t-submit__content">
+      <view class="add__tips" bind:tap="handleToAdd">新增抖音号 > </view>
+      <view class="t__button__content">
+        <view class="copy">
+          <t-icon name="attach" size="48rpx" data-name="attach"  />
+          复制链接
+        </view>
+        <t-button theme="primary" size="large" bind:tap="handleAddToShowCase" block t-class="t-submit">添加商品到橱窗</t-button>
+        </view>
+    </view>
+  </view>
+</t-popup>

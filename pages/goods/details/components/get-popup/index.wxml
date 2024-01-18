@@ -1,0 +1,16 @@
+<t-popup visible="{{show}}" placement="bottom" bind:visible-change="closePromotionPopup">
+  <view class="block">
+    <view class="header">
+      <view class="title">{{title}}</view>
+    </view>
+    <view class="popu__text__content">
+      <view class="text">1.已授权抖音号的达人，有一个抖音号达到要求即可免费领取视频</view>
+      <view class="text">2.不同商品的视频免费领要求不同，请以商品详情页展示为准</view>
+      <view >3.以下为领取要求的说明：</view>
+      <view class="text-tips">①粉丝数：您的抖音号粉丝数</view>
+      <view class="text-tips">②近30天橱窗销量：您的抖音号商品橱窗在近30天内的有效出单数量可在【个人中心-账号管理】查看抖音号橱窗数据</view>
+      <view class="text-tips tips-last">无法领取视频的达人，可领取其他符合要求的商品视频哦～</view>
+    </view>
+    <view class="t-submit" bind:tap="closePromotionPopup">我知道了</view>
+  </view>
+</t-popup>

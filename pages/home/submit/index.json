@@ -1,0 +1,12 @@
+{
+  "navigationBarTitleText": "提交作业",
+  "navigationBarBackgroundColor": "#f5f5f5",
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "custom-nav-bar": "/components/custom-nav-bar/index",
+    "t-textarea": "tdesign-miniprogram/textarea/textarea",
+    "t-upload": "tdesign-miniprogram/upload/upload",
+    "t-button": "tdesign-miniprogram/button/button",
+    "t-count-down": "tdesign-miniprogram/count-down/count-down"
+  }
+}

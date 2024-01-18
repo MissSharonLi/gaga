@@ -1,0 +1,53 @@
+<custom-nav-bar title="视频作业" custom-class="custom-nav-bar-content" />
+ <view class="account-empty-content" wx:if="{{operationList.length===0}}">
+  <t-empty t-class="empty-cls" t-class-image="t-empty__image" image="/images/cart.png" description="暂无数据哦～" />
+</view>
+<view class="operation__content">
+  <view class="tab__items__content">
+    <view
+      wx:for="{{tabList}}"
+      wx:key="index"
+      class="tab__items {{tabNum === index ? 'active' : ''}}"
+      data-num="{{index}}"
+      data-status="{{item.status}}"
+      bind:tap="handleShiftTab">
+      <view class="num">3</view>
+      <view>{{item.statusText}}</view>
+    </view>
+  </view>
+  <view class="goods__list__content">
+    <view class="list__items"
+      wx:for="{{operationList}}"
+      wx:key="index"
+      >
+      <view class="list__items__content">
+        <image class="img"  src="{{item.goods_image}}" />
+        <view class="items__right">
+          <view class="title">
+            <image class="douyin" src="/images/douyin.png" /> {{item.goods_title}}
+          </view>
+          <view class="items__text__content">
+            <view class="main">
+              <view class="sub_title">领取内容：</view>
+              <view class="sub_content">{{item.goods_content_type_text}}</view>
+            </view>
+            <view class="main">
+              <view class="sub_title">领取数量：</view>
+              <view class="sub_content">{{item.goods_content_num}}个</view>
+            </view>
+            <view class="main">
+              <view class="sub_title">领取时间：</view>
+              <view class="sub_content">{{item.receive_time}}</view>
+            </view>
+          </view>
+        </view>
+        <view class="state {{item.status === 'incomplete' ? 'point' : '' }}">{{item.status_text}}</view>
+      </view>
+      <view class="submit__time__content" wx:if="{{item.canAddWork}}">
+        <view class="time">提交作业剩余时间：<t-count-down t-class="countdown" size="small" time="{{ item.submit_left_time }}" /></view>
+        <view class="submit__operation" data-item="{{item}}"  bind:tap="handlToSubmit">提交作业</view>
+      </view>
+    </view>
+  </view>
+  <load-more list-is-empty="{{!operationList.length}}" status="{{loadStatus}}" bind:retry="onReTry" />
+</view>

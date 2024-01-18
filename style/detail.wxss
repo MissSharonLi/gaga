@@ -1,0 +1,135 @@
+/* 全局组件样式  覆盖 */
+.t-tab-bar-item__content--checked {
+  color: #5a72fa !important;
+}
+
+.t-notice-bar--warning {
+  color: var(
+    --td-notice-bar-warning-color,
+    var(--td-warning-color, var(--td-warning-color-5, #e69249))
+  );
+  background-color: var(--td-notice-bar-warning-bg-color, var(--td-warning-color-1, #fef6e9));
+}
+
+.t-grid-item__content {
+  background-color: #f5f5f5 !important;
+  padding: 12rpx 10rpx !important;
+  border-radius: 8rpx;
+}
+
+.t-grid-item__image--large,
+.t-grid-item__image--large .t-image {
+  width: 64px !important;
+  height: 64px !important;
+}
+
+.t-navbar__center-title {
+  font-size: 30rpx !important;
+  font-weight: normal !important;
+}
+.t-navbar--fixed .t-navbar__content {
+  background: #f5f5f5 !important;
+  z-index: 999 !important;
+}
+.video-content .t-navbar--fixed .t-navbar__content {
+  background: transparent !important;
+}
+.t-navbar__capsule::before {
+  background: #fff !important;
+}
+.login-wrap .t-navbar__capsule::before {
+  background: rgba(0, 0, 0, 0.5) !important;
+}
+.custom-transparent .t-icon-home,
+.custom-transparent .t-icon-chevron-left {
+  color: #fff !important;
+}
+.t-button--primary {
+  background-color: #5b72f4 !important;
+  font-size: 28rpx !important;
+}
+.t-button--primary::after {
+  border-color: #5b72f4 !important;
+}
+.t-button--light {
+  color: #5b72f4 !important;
+  font-size: 28rpx !important;
+}
+.t-dialog__content {
+  padding-top: 35rpx !important;
+}
+.t-dialog__header {
+  font-size: 32rpx !important;
+  color: #333;
+}
+.login-input-warp .verify {
+  color: #999;
+  font-size: 32rpx;
+}
+
+/* 商品展示列表-样式 */
+.goods__show__content {
+  background-color: #fff;
+  padding: 20rpx;
+}
+.classic__tabs__content .t-tabs__scroll::after {
+  height: 0 !important;
+}
+.goods__tabs__content .t-tabs__nav--top {
+  background-color: #f5f5f5;
+  padding: 0 15rpx;
+  border-radius: 9rpx;
+  width: calc(100% - 30rpx);
+}
+.goods__tabs__content .t-tabs__item {
+  padding: 0 !important;
+  height: var(--td-tab-item-height, 80rpx);
+}
+.goods__tabs__content .t-tabs__item-inner {
+  color: #666;
+  font-size: 24rpx;
+  height: 75%;
+  padding: 0 20rpx;
+  border-radius: 8rpx;
+}
+.goods__tabs__content .t-tabs__item-inner.t-tabs__item-inner--active {
+  background-color: #fff;
+  color: #5a72fa;
+}
+.goods__tabs__content .t-tabs__scroll::after {
+  height: 0 !important;
+}
+.goods__tabs__content .t-tabs__scroll {
+  height: var(--td-tab-item-height, 80rpx);
+  position: relative;
+}
+.classic__tabs__content .t-tabs__item-inner {
+  font-size: 20rpx;
+}
+.classic__tabs__content .t-tabs__item-inner {
+  height: var(--td-tab-item-height, 44rpx);
+}
+.classic__tabs__content .t-tabs__item--tag:not(.t-tabs__item--evenly):first-child {
+  margin-left: 0 !important;
+}
+.classic__tabs__content .t-tabs__item-inner--tag {
+  padding: 0 20rpx !important;
+}
+.get__popup__content .t-overlay {
+  z-index: 11501 !important;
+}
+.t-checkbox__icon-circle {
+  width: 80rpx !important;
+  height: 80rpx !important;
+}
+
+.t-checkbox--block {
+  align-items: center;
+}
+
+.t-checkbox--right {
+  padding: 20rpx 32rpx !important;
+}
+.t-image-viewer__nav {
+  top: 80rpx;
+}

@@ -1,0 +1,78 @@
+<t-sticky>
+  <t-navbar class="home-custom-bar"></t-navbar>
+  <view class="home-main-title-content">
+    <view class="logo-content">
+      <image class="logo img" src="/images/logo.png" />
+      <view class="title img">嘎嘎主站</view>
+    </view>
+    <view class="title-content">免费领视频</view>
+  </view>
+</t-sticky>
+<view class="home-page-header">
+  <view class="search">
+    <t-search
+      t-class-input="t-search__input"
+      t-class-input-container="t-search__input-container"
+      placeholder="输入标题搜索"
+      leftIcon=""
+      value="{{goodsParams.keywords}}"
+      bind:change="changeHandle"
+    >
+      <t-icon slot="left-icon" prefix="wr" name="search" size="36rpx" color="#687dff" />
+    </t-search>
+    <view class="search-submit" bind:tap="handleSearch" >搜索</view>
+  </view>
+  <view class="swiper-wrap">
+    <t-swiper
+      wx:if="{{bannerList.length > 0}}"
+      current="{{current}}"
+      autoplay="{{autoplay}}"
+      duration="{{duration}}"
+      interval="{{interval}}"
+      navigation="{{navigation}}"
+      imageProps="{{swiperImageProps}}"
+      list="{{bannerList}}"
+      navigation="{{ { type: 'dots-bar' } }}"
+      height="{{110}}"
+      bind:click="navToActivityDetail"
+    />
+  </view>
+  <t-notice-bar
+    visible="{{true}}"
+    direction="vertical"
+    interval="{{3000}}"
+    content="{{noticeContent}}"
+    prefixIcon=""
+    bind:click="click"
+    theme="warning"
+    >
+  </t-notice-bar>
+</view>
+<view class="home-page-container">
+  <view class="home-page-tabs">
+    <t-tabs
+      t-class="t-tabs"
+      t-class-active="tabs-external__active"
+      t-class-item="tabs-external__item"
+      defaultValue="{{0}}"
+      space-evenly="{{false}}"
+      theme="tag"
+      bind:change="tabChangeHandle"
+    >
+      <t-tab-panel
+        wx:for="{{tabList}}"
+        wx:for-index="index"
+        wx:key="index"
+        label="{{item.name}}"
+        value="{{item.id}}"
+      />
+    </t-tabs>
+  </view>
+  <image class="submit__icon" bind:tap="handleToOperation" src="/images/submit.png" />
+  <goods-list
+    wr-class="goods-list-container"
+    goodsList="{{goodsList}}"
+    bind:click="goodListClickHandle"
+  />
+  <load-more list-is-empty="{{!goodsList.length}}" status="{{loadStatus}}" bind:retry="onReTry" />
+</view>

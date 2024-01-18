@@ -1,0 +1,110 @@
+.block {
+  width: 100vw;
+  height: 400px;
+  background: #fff;
+  border-top-left-radius: 50rpx;
+  border-top-right-radius: 50rpx;
+}
+.add__scroll__content {
+  height: 260px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+
+.title {
+  flex: 1;
+  text-align: left;
+  font-weight: 600;
+  font-size: 30rpx;
+  color: #333;
+}
+.t-submit__content {
+  position: fixed;
+  width: 100%;
+  left: 0;
+  bottom: 50rpx;
+  padding-top: 30rpx;
+  background-color: #fff;
+}
+.add__tips {
+  font-size: 20rpx;
+  text-align: center;
+  margin-bottom: 30rpx;
+}
+.t__button__content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.t-submit__content .copy {
+  font-size: 20rpx;
+  padding: 0 20rpx;
+}
+.t-submit {
+  background-color: rgb(96, 110, 249) !important;
+  height: 80rpx !important;
+  line-height: 80rpx !important;
+  text-align: center !important;
+  color: #fff !important;
+  font-size: 28rpx !important;
+  width: 78% !important;
+  margin-right: 30rpx;
+  border-radius: 4rpx !important;
+}
+.theme-card {
+  overflow: hidden;
+  border-radius: 24rpx;
+}
+.theme-card .all__label {
+  margin-top: 0;
+  text-align: left;
+}
+.theme-card .all__label .select__all {
+  position: absolute;
+  right: 85rpx;
+  top: 24rpx;
+  color: #999;
+  font-weight: normal !important;
+  font-size: 28rpx;
+}
+.already__no__authority {
+  text-align: 'right';
+  color: red;
+  font-size: 24rpx;
+  float: right;
+}
+.theme-icon {
+  font-size: 40rpx;
+  width: 40rpx;
+  height: 40rpx;
+}
+.icon-disabled {
+  display: none;
+}
+.theme-card .custom__content {
+  display: flex;
+  align-items: center;
+  padding: -20rpx 0;
+  justify-content: space-between;
+}
+.custom__info {
+  display: flex;
+  align-items: center;
+}
+.theme-card .custom__content .avator {
+  width: 88rpx;
+  height: 88rpx;
+  display: block;
+  margin-right: 25rpx;
+  border-radius: 50%;
+}
+.theme-card .info__content {
+  color: #333;
+}
+.theme-card .info__content .num {
+  font-size: 22rpx;
+}
+.theme-card .info__content .margin-16 {
+  margin-left: 16rpx;
+}

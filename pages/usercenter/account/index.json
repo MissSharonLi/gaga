@@ -1,0 +1,19 @@
+{
+  "navigationBarTitleText": "账号管理",
+  "navigationBarBackgroundColor": "#f5f5f5",
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "t-popup": "tdesign-miniprogram/popup/popup",
+    "t-icon": "tdesign-miniprogram/icon/icon",
+    "t-cell": "tdesign-miniprogram/cell/cell",
+    "t-toast": "tdesign-miniprogram/toast/toast",
+    "t-image": "tdesign-miniprogram/image/image",
+    "t-empty": "tdesign-miniprogram/empty/empty",
+    "custom-nav-bar": "/components/custom-nav-bar/index",
+    "qr-container": "/components/wx-qr/index",
+    "douyin-scan": "./components/douyin-scan/index",
+    "load-more": "/components/load-more/index"
+  },
+  "enablePullDownRefresh": true,
+  "backgroundTextStyle": "dark"
+}

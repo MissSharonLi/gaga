@@ -1,0 +1,12 @@
+<t-popup visible="{{show}}" placement="center" bind:visible-change="closeScanPopup">
+  <view class="block">
+   <t-image
+      class="douyin"
+      src="/images/dy_scan.png"
+      mode="aspectFill"
+
+    />
+     <qr-container class="qr__container" size="400" text="{{qrcode}}"></qr-container>
+     <t-button theme="primary" class="refrsh__button" size="large" bind:tap="handleSubmit" block bind:tap="handleRefresh">刷新二维码({{countdown}}s后过期)</t-button>
+  </view>
+</t-popup>

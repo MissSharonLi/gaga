@@ -1,0 +1,31 @@
+<t-popup
+  visible="{{show}}"
+  placement="center"
+  t-class="t-popup-content"
+  bind:visible-change="closeGuildPopup">
+  <view class="block" >
+    <view class="step-1" hidden="{{current !== 0}}">
+      <view class="step__text__content">参考范例视频进行操作哦～</view>
+      <view class="step__button" data-num="{{1}}" bind:tap="doNext">下一步</view>
+    </view>
+    <view class="step-2" hidden="{{current !== 1}}">
+      <view class="step__2__content">
+        <view class="step__text__content">请下载素材后完成视频并进行作业提交</view>
+        <view class="step__button" data-num="{{2}}" bind:tap="doNext">下一步</view>
+      </view>
+      <image src="/images/step.jpg" class="img" />
+    </view>
+    <view class="step-3" hidden="{{current !== 2}}">
+      <view class="select__content">
+        <image src="/images/selected.png" class="img" />
+      </view>
+      <view class="step__3__bottom">
+        <view class="step__text__content"><view>点击勾选视频</view>下载已勾选的视频</view>
+        <view class="step__button__content">
+          <view class="step__button" bind:tap="closeGuildPopup">我知道了</view>
+          <view class="step__button special" bind:tap="closeGuildPopup">下载分镜<view class="tips">已选取(1/10)共10Mb</view></view>
+        </view>
+      </view>
+    </view>
+  </view>
+</t-popup>

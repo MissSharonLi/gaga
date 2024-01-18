@@ -1,0 +1,18 @@
+<view class="video-content login-wrap">
+  <custom-nav-bar type="{{2}}" />
+  <video
+    wx:if="{{video_url}}"
+    id="myVideo"
+    loop
+    controls="{{true}}"
+    style="display:block;position:fixed;top:0;height:100%;width:100%"
+    autoplay="{{true}}"
+    show-play-btn="{{true}}"
+    objectFit="contain"
+    muted="{{false}}"
+    show-mute-btn='{{false}}'
+    show-bottom-progress='{{false}}'
+    vslide-gesture-in-fullscreen='{{true}}'
+    src="{{video_url}}">
+  </video>
+</view>

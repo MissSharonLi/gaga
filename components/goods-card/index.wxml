@@ -1,0 +1,60 @@
+<view
+  id="{{independentID}}"
+  class="goods-card"
+  bind:tap="clickHandle"
+  data-goods="{{ goods }}"
+>
+	<view class="goods-card__main">
+		<view class="goods-card__thumb" bind:tap="clickThumbHandle">
+			<t-image
+			  wx:if="{{ !!goods.image }}"
+			  t-class="goods-card__img"
+			  src="{{ goods.image }}"
+			  mode="aspectFill"
+
+			/>
+		</view>
+		<view class="goods-card__body">
+      <view class="goods__card__tag">
+        <view>
+          <t-tag class="margin-16" wx:for="{{goods.tags}}" wx:key="index" variant="light" theme="primary">{{item}}</t-tag>
+        </view>
+        <view class="tips">{{goods.release_time}}发布</view>
+      </view>
+      <view class="block">
+        <t-grid column="{{1}}" align="left">
+          <t-grid-item layout="horizontal" class="test" image="{{goods.thumb}}">
+            <view slot="text" class="good-title__content">
+              <image
+                class="img"
+                src="/images/douyin.png"
+                mode="aspectFill"
+              />
+              <view class="text-ellipsis"> {{ goods.name }}</view>
+            </view>
+            <view slot="description" class="description">
+              <view class="fee">
+                <view class="point">嘎嘎高佣{{goods.commission}}%</view>
+                <view>| 公开{{goods.public_commission}}%</view>
+              </view>
+              <view class="price">到手¥{{goods.price}}</view>
+            </view>
+          </t-grid-item>
+        </t-grid>
+        <view class="already-get__content">
+          <image
+            wx:if="{{goods.receive_people_avatar.length > 0}}"
+            wx:for="{{goods.receive_people_avatar}}"
+            wx:key="index"
+            class="avator"
+            src="{{ item }}"
+			      mode="aspectFill"
+          />
+          <view>{{goods.receive_people_num}}位抖音达人已领</view>
+        </view>
+      </view>
+      <view class="free-to-get">免费领视频</view>
+		</view>
+	</view>
+</view>
+

@@ -1,0 +1,13 @@
+{
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "t-popup": "tdesign-miniprogram/popup/popup",
+    "t-icon": "tdesign-miniprogram/icon/icon",
+    "t-toast": "tdesign-miniprogram/toast/toast",
+    "t-image": "tdesign-miniprogram/image/image",
+    "custom-nav-bar": "../../../components/custom-nav-bar/index",
+    "t-radio": "tdesign-miniprogram/radio/radio",
+    "t-dialog": "tdesign-miniprogram/dialog/dialog",
+    "get-phone-popup": "./components/get-phone-popup"
+  }
+}

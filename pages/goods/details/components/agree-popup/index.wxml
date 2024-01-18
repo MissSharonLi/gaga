@@ -1,0 +1,17 @@
+<t-popup visible="{{show}}" placement="middle" bind:visible-change="closePromotionPopup">
+  <view class="block">
+    <view class="header">
+      <view class="title">{{title}}</view>
+    </view>
+    <view class="popu__text__content">
+      <view class="text">在你使用【嘎嘎视频素材】服务之前，请仔细阅读
+        <view>《嘎嘎视频素材隐私保护指引》</view>。
+        如你同意《嘎嘎视频素材隐私保护指引》，请点击“同意”开始使用《寻鱼视频素材》。
+      </view>
+    </view>
+    <view class="button__submit__content">
+      <view>拒绝</view>
+      <view>同意</view>
+    </view>
+  </view>
+</t-popup>

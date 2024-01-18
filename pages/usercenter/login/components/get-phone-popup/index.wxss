@@ -1,0 +1,53 @@
+.block {
+  width: 100vw;
+  height: 270px;
+  background: #fff;
+  border-top-left-radius: 50rpx;
+  border-top-right-radius: 50rpx;
+}
+.header {
+  height: 116rpx;
+}
+.header .logo {
+  width: 100rpx;
+  height: 100rpx;
+  margin: 40rpx auto;
+  display: block;
+}
+.title {
+  flex: 1;
+  text-align: left;
+  font-weight: 600;
+  font-size: 30rpx;
+  color: #333;
+  padding: 40rpx 50rpx 30rpx;
+}
+
+.popu__text__content {
+  font-size: 24rpx;
+  color: #666;
+  padding: 0 50rpx 40rpx;
+}
+.popu__text__content .text {
+  margin-bottom: 20rpx;
+  text-align: justify;
+}
+.popu__text__content .text-tips {
+  color: #999;
+  text-align: justify;
+}
+.popu__text__content .tips-last {
+  margin-top: 20rpx;
+}
+.t-submit {
+  background-color: rgb(96, 110, 249);
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  color: #fff;
+  font-size: 28rpx;
+  width: 90%;
+  margin: 0 auto;
+  border-radius: 0rpx !important;
+  display: block !important;
+}

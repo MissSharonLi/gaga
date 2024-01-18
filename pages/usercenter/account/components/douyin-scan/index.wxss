@@ -1,0 +1,36 @@
+.block {
+  position: relative;
+  width: 640rpx;
+  height: 960rpx;
+  background-color: transparent;
+}
+.douyin {
+  width: 100%;
+  height: 100%;
+}
+.close-btn {
+  position: absolute;
+  left: 50%;
+  margin-left: -32rpx;
+  bottom: calc(-1 * (48rpx + 64rpx));
+}
+
+.wrapper {
+  margin: 32rpx;
+  display: block;
+}
+.qr__container {
+  position: absolute;
+  left: 120rpx;
+  top: 220rpx;
+  width: 400rpx;
+  height: 400rpx;
+}
+.refrsh__button {
+  position: absolute;
+  top: 680rpx;
+  width: 90%;
+  left: 5%;
+  height: 84rpx;
+  line-height: 40rpx;
+}

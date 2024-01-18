@@ -1,0 +1,21 @@
+<custom-nav-bar  />
+<view class="login-input-warp">
+  <view class="title">账号密码登录</view>
+  <t-input
+    prefixIcon="mobile"
+    clearable
+    bind:change="accountChange"
+    bind:clear="accountChange"
+    value="{{params.account}}"
+    placeholder="请输入手机号" />
+  <t-input
+    prefixIcon="lock-on"
+    type="password"
+    clearable
+    bind:change="passwordChange"
+    bind:clear="passwordChange"
+    value="{{params.password}}"
+    placeholder="请输入密码" />
+  <t-button theme="primary" size="large" loading="{{loading}}" block bind:tap="handleSubmit">登录</t-button>
+  <view class="tips" bind:tap="handleOperation">手机验证码登录</view>
+</view>
