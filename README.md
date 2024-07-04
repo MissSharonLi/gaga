@@ -13,25 +13,16 @@
     |-- components	//	公共组件库
     |-- config	//	基础配置
     |-- custom-tab-bar	//	自定义 tabbar
-    |-- model	//	mock 数据
     |-- pages
-    |   |-- cart	//	购物车相关页面
-    |   |-- coupon	//	优惠券相关页面
     |   |-- goods	//	商品相关页面
     |   |-- home	//	首页
-    |   |-- order	//	订单售后相关页面
-    |   |-- promotion-detail	//	营销活动页面
     |   |-- usercenter	//	个人中心及收货地址相关页面
     |-- services	//	请求接口
     |-- style	//	公共样式与iconfont
     |-- utils	//	工具库
 ```
 
-### 2. 数据模拟
-
-嘎嘎小程序采用真实的接口数据，模拟后端返回逻辑，在小程序展示完整的购物场景与购物体验逻辑。
-
-### 3. 添加新页面
+### 2. 添加新页面
 
 1. 在 `pages `目录下创建对应的页面文件夹
 2. 在 `app.json` 文件中的 ` "pages"` 数组中加上页面路径
